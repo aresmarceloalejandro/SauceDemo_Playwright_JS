@@ -2,6 +2,18 @@
 
 ---
 
+## Qué cubre
+
+**Pedidos en el challenge**
+
+1. Login exitoso con `standard_user`
+2. Login fallido con credenciales inválidas + mensaje de error
+3. Compra happy path completa
+4.  `locked_out_user` no puede entrar (mensaje de bloqueo)
+5.  Checkout con campos vacíos → error "First Name is required"
+
+---
+
 ## Requisitos
 
 - Node.js 18 
@@ -119,11 +131,13 @@ testIdAttribute: 'data-test'
 
 ### Configuración (`.env` + `playwright.config.js`)
 
-- `.env`: `BASE_URL`, usuario/password válidos e inválidos
+- `.env`: `BASE_URL`, usuarios/passwords (standard, invalid, locked_out)
 - `baseURL` en el config lee `process.env.BASE_URL` 
 - timeouts razonables, `retries: 1`, reporter list + HTML + Allure
-- solo **Chromium**: alcance del challenge; preferí un flujo sólido a cross-browser superficial
+- solo **Chromium**
 - screenshot on failure
+
+
 
 ---
 

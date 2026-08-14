@@ -8,6 +8,7 @@ export class CheckoutInfoPage extends CommonPage {
     this.postalCodeInput = page.getByTestId('postalCode');
     this.continueButton = page.getByTestId('continue');
     this.cancelButton = page.getByTestId('cancel');
+    this.errorMessage = page.getByTestId('error');
   }
 
   async fillCustomerInfo({ firstName, lastName, postalCode }) {

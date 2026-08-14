@@ -16,4 +16,14 @@ test.describe('Login', () => {
     );
     await expect(loginPage.page).toHaveURL(/\/$/);
   });
+
+  test('locked_out_user no puede ingresar y muestra el mensaje de bloqueo', async ({ loginPage }) => {
+    await loginPage.loginAs(process.env.LOCKED_OUT_USER, process.env.STANDARD_PASSWORD);
+
+    await expect(loginPage.errorMessage).toBeVisible();
+    await expect(loginPage.errorMessage).toHaveText(
+      'Epic sadface: Sorry, this user has been locked out.',
+    );
+    await expect(loginPage.page).toHaveURL(/\/$/);
+  });
 });
