@@ -1,0 +1,18 @@
+{
+  "author": "Alejandro Ares",
+  "license": "ISC",
+  "name": "BetWarrior SuceDemo Automation",
+  "version": "1.0.0",
+  "description": "Playwright + JavaScript(POM)",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "dotenv": "^16.4.7"
+  }
+}
