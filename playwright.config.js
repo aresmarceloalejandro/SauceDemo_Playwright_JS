@@ -13,6 +13,11 @@ export default defineConfig({
   reporter: [
     ['list'],
     ['html', { open: 'never', outputFolder: 'playwright-report' }],
+    ['allure-playwright', {
+      detail: true,
+      suiteTitle: true,
+      resultsDir: 'allure-results',
+    }],
   ],
   timeout: 30_000,
   expect: {

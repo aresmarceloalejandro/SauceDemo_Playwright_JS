@@ -9,10 +9,14 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
-    "report": "playwright show-report"
+    "test:allure": "node scripts/generate-allure-report.mjs",
+    "report": "playwright show-report",
+    "report:allure": "npx allure open ./allure-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.3",
     "dotenv": "^16.4.7"
   }
 }
